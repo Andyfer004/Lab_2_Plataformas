@@ -7,6 +7,14 @@
 * ---------------------------------------------------------------------------------------------
  */
 fun main(args: Array<String>) {
+    // Definición de funciones para interactuar con los perfiles y hobbies
+
+    /**
+     * Crea un nuevo perfil de usuario y lo agrega a la lista de perfiles.
+     * Solicita al usuario ingresar los datos del perfil.
+     *
+     * @param listaPerfiles La lista mutable que contiene los perfiles de usuario existentes.
+     */
     fun crearPerfil(listaPerfiles: MutableList<PerfilUsuario>) {
         print("Ingrese ID: ")
         val id = readLine()?.toIntOrNull() ?: return
@@ -61,7 +69,11 @@ fun main(args: Array<String>) {
         println("Perfil creado exitosamente.")
     }
 
-
+    /**
+     * Imprime la información de un perfil de usuario en la consola.
+     *
+     * @param perfil El perfil de usuario cuya información se imprimirá.
+     */
     fun imprimirPerfil(perfil: PerfilUsuario) {
         println("ID: ${perfil.ID}")
         println("Nombres: ${perfil.Nombres}")
@@ -74,6 +86,12 @@ fun main(args: Array<String>) {
         println("Hobbies:")
         perfil.hobby?.forEach { println("- ${it.title}: ${it.description}") }
     }
+    /**
+     * Agrega un hobby a un perfil de usuario existente en la lista de perfiles.
+     * Solicita al usuario ingresar los datos del hobby.
+     *
+     * @param listaPerfiles La lista mutable que contiene los perfiles de usuario existentes.
+     */
     fun agregarHobby(listaPerfiles: MutableList<PerfilUsuario>) {
         print("Ingrese el ID del perfil al que desea agregar un hobby: ")
         val idBuscado = readLine()?.toIntOrNull()
@@ -97,7 +115,11 @@ fun main(args: Array<String>) {
         }
     }
 
-
+    /**
+     * Busca un perfil de usuario en la lista por ID o por Nombres/Apellidos y lo imprime si se encuentra.
+     *
+     * @param listaPerfiles La lista mutable que contiene los perfiles de usuario existentes.
+     */
     fun buscarPerfil(listaPerfiles: MutableList<PerfilUsuario>) {
         print("Buscar por ID (1) o por Nombres/Apellidos (2): ")
         val opcionBusqueda = readLine()?.toIntOrNull()
@@ -131,6 +153,11 @@ fun main(args: Array<String>) {
 
 
 
+    /**
+     * Elimina un perfil de usuario de la lista por su ID.
+     *
+     * @param listaPerfiles La lista mutable que contiene los perfiles de usuario existentes.
+     */
 
     fun eliminarPerfil(listaPerfiles: MutableList<PerfilUsuario>) {
         print("Ingrese el ID del perfil a eliminar: ")
